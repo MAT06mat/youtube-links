@@ -71,6 +71,11 @@ export const LinksList: ItemProps[] = [
                 videoId: "l8jrkY--Xp8",
                 title: "K.CAO - Forme Like U",
             },
+            {
+                type: "video",
+                videoId: "2PIzd5yUKME",
+                title: "M/M - The real Ritz Balmer",
+            },
         ],
     },
     {
