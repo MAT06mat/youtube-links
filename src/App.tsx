@@ -7,7 +7,7 @@ function App() {
     return (
         <>
             <header>
-                <h2>Youtube links</h2>
+                <h2>Productions studieuses</h2>
                 <ThemeButton />
             </header>
             <section>
