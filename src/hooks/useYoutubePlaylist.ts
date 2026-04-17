@@ -43,6 +43,11 @@ interface VideoProps {
     thumbnail: string;
 }
 
+interface CachedData {
+    timestamp: number;
+    videos: VideoProps[];
+}
+
 function useYouTubePlaylist(playlistId: string) {
     const [videos, setVideos] = useState<VideoProps[]>([]);
     const [loading, setLoading] = useState(true);
@@ -50,9 +55,25 @@ function useYouTubePlaylist(playlistId: string) {
 
     const API_KEY = "AIzaSyBsVNKMjzmpDKAv8IEJplLm8oogd2Xs85s";
     const BASE_URL = "https://www.googleapis.com/youtube/v3/playlistItems";
+    const CACHE_DURATION = 60 * 60 * 1000;
 
     useEffect(() => {
         const fetchPlaylistData = async () => {
+            const cacheKey = `yt_playlist_${playlistId}`;
+            const cached = localStorage.getItem(cacheKey);
+
+            if (cached) {
+                const parsedCache: CachedData = JSON.parse(cached);
+                const isExpired =
+                    Date.now() - parsedCache.timestamp > CACHE_DURATION;
+
+                if (!isExpired) {
+                    setVideos(parsedCache.videos);
+                    setLoading(false);
+                    return;
+                }
+            }
+
             try {
                 const response = await fetch(
                     `${BASE_URL}?part=snippet&maxResults=50&playlistId=${playlistId}&key=${API_KEY}`,
@@ -73,6 +94,14 @@ function useYouTubePlaylist(playlistId: string) {
                         item.snippet.thumbnails.high?.url ||
                         item.snippet.thumbnails.default?.url,
                 }));
+
+                // Cache data
+                const dataToCache: CachedData = {
+                    timestamp: Date.now(),
+                    videos: formattedVideos,
+                };
+                localStorage.setItem(cacheKey, JSON.stringify(dataToCache));
+
                 setVideos(formattedVideos);
                 setLoading(false);
             } catch (err) {
@@ -84,7 +113,7 @@ function useYouTubePlaylist(playlistId: string) {
         if (playlistId) {
             fetchPlaylistData();
         }
-    }, [playlistId]);
+    }, [playlistId, CACHE_DURATION]);
 
     return { videos, loading, error };
 }
