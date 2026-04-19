@@ -15,6 +15,7 @@
     max-height: 160px;
     overflow: hidden;
     background: var(--surface-color);
+    border-bottom: 1px solid var(--line-color);
     flex-shrink: 0;
 
     img {
