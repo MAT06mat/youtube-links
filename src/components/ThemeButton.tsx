@@ -11,12 +11,7 @@ function ThemeButton() {
     body?.toggleAttribute("dark-mode", darkMode);
     document
         .querySelector("meta[name=theme-color]")
-        ?.setAttribute(
-            "content",
-            body
-                ? getComputedStyle(body).getPropertyValue("background-color")
-                : "#fff",
-        );
+        ?.setAttribute("content", darkMode ? "#161b26" : "#f8fafc");
 
     return (
         <label className="theme-icon">
