@@ -6,24 +6,34 @@
         sans-serif;
     line-height: 1.5;
     font-weight: 400;
-
     height: 100svh;
     width: 100%;
-
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
 
-a {
-    font-weight: 500;
-    color: var(--brand-color);
-    text-decoration: inherit;
-}
+    /* Color Palette */
+    --brand-color: oklch(65% 0.25 260);
+    --brand-gradient: linear-gradient(
+        135deg,
+        oklch(65% 0.25 260),
+        oklch(55% 0.2 300)
+    );
 
-a:hover {
-    color: var(--highlighted-brand-color);
+    /* Light Theme */
+    --base-color: #ffffff;
+    --surface-color: #f8fafc;
+    --surface-hover: #f1f5f9;
+    --line-color: #e2e8f0;
+    --text-color: #0f172a;
+    --secondary-text-color: #64748b;
+    --glass-blur: blur(12px);
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md:
+        0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg:
+        0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 body {
@@ -32,27 +42,28 @@ body {
     color: var(--text-color);
     transition: background-color 0.3s ease;
 
-    --brand-color: oklch(65% 0.25 260);
-    --brand-gradient: linear-gradient(
-        135deg,
-        oklch(65% 0.25 260),
-        oklch(55% 0.2 300)
-    );
-
-    --base-color: #ffffff;
-    --surface-color: #f8fafc;
-    --line-color: #e2e8f0;
-    --text-color: #0f172a;
-    --secondary-text-color: #64748b;
-    --glass-blur: blur(12px);
-
     &[dark-mode] {
         --base-color: #0b0e14;
         --surface-color: #161b26;
+        --surface-hover: #1e2533;
         --line-color: #2d3748;
         --text-color: #f8fafc;
         --secondary-text-color: #94a3b8;
+        --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.6);
     }
+}
+
+a {
+    font-weight: 500;
+    color: var(--brand-color);
+    text-decoration: inherit;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: oklch(from var(--brand-color) calc(l * 1.1) c h);
 }
 
 h1 {
@@ -70,4 +81,9 @@ button {
     color: var(--text-color);
     cursor: pointer;
     background-color: var(--surface-color);
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: var(--surface-hover);
+    }
 }
