@@ -4,4 +4,6 @@ export type FolderProps = {
     type: "folder";
     text: string;
     list: ItemProps[];
+    desc?: string;
+    shortDesc?: string;
 };

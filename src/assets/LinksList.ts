@@ -5,15 +5,21 @@ export const LinksList: ItemProps[] = [
         type: "playlist",
         id: "PLk0SXGPX9sLSackL00pWN-3LRGxynElbF",
         title: "INS'Anomalies",
+        desc: "Une série sur l'INSA et la réussite, avec un soupçon de comédie et de fantastique.",
+        shortDesc: "Une série sur l'INSA",
     },
     {
         type: "playlist",
         id: "PLk0SXGPX9sLT7a2Uigw15XD72KMx5B4vg",
         title: "Chansons studieuses",
+        desc: "Des chansons sur les matières de l'INSA, dans leurs bons comme leurs mauvais côtés.",
+        shortDesc: "Chansons sur l'INSA",
     },
     {
         type: "folder",
         text: "Autres",
+        desc: "Des vidéos humoristiques sur à peu près n'importe quel sujet en lien avec l'INSA.",
+        shortDesc: "Autres vidéos",
         list: [
             {
                 type: "video",

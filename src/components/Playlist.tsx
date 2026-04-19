@@ -3,7 +3,7 @@ import type { ItemProps } from "../types/ItemProps";
 import type { PlaylistProps } from "../types/PlaylistProps";
 import Folder from "./Folder";
 
-function Playlist({ id, title }: PlaylistProps) {
+function Playlist({ id, title, shortDesc, desc }: PlaylistProps) {
     const { videos, loading, error } = useYouTubePlaylist(id);
 
     let itemList: ItemProps[] = videos.map((video) => ({
@@ -39,7 +39,15 @@ function Playlist({ id, title }: PlaylistProps) {
         ...itemList,
     ];
 
-    return <Folder type="folder" text={title} list={itemList} />;
+    return (
+        <Folder
+            type="folder"
+            text={title}
+            shortDesc={shortDesc}
+            desc={desc}
+            list={itemList}
+        />
+    );
 }
 
 export default Playlist;

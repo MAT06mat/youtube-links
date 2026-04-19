@@ -6,6 +6,9 @@ import "./styles/App.scss";
 function App() {
     return (
         <>
+            <div className="banner-container">
+                <img src="banniere.png" alt="Bannière" />
+            </div>
             <header>
                 <h2>Productions studieuses</h2>
                 <ThemeButton />
