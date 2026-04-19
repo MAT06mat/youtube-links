@@ -4,7 +4,7 @@ import "../styles/ThemeButton.scss";
 function ThemeButton() {
     const [darkMode, setDarkMode] = usePersistedState(
         "darkMode",
-        window.matchMedia("(prefers-color-scheme: dark)").matches
+        window.matchMedia("(prefers-color-scheme: dark)").matches,
     );
 
     const body = document.querySelector("body");
@@ -15,7 +15,7 @@ function ThemeButton() {
             "content",
             body
                 ? getComputedStyle(body).getPropertyValue("background-color")
-                : "#fff"
+                : "#fff",
         );
 
     return (

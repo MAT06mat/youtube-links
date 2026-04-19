@@ -12,6 +12,13 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    background-color: var(--base-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
 
     /* Color Palette */
     --brand-color: oklch(65% 0.25 260);
@@ -34,13 +41,6 @@
         0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg:
         0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-}
-
-body {
-    margin: 0;
-    background-color: var(--base-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease;
 
     &[dark-mode] {
         --base-color: #0b0e14;
