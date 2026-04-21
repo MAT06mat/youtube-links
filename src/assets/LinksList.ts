@@ -31,6 +31,11 @@ export const LinksList: ItemProps[] = [
                 videoId: "3E0HKJSCLYQ",
                 title: "Ce qui se produit quand on reste à la BMC après 22h00",
             },
+            {
+                type: "video",
+                videoId: "FWeEP0IsxOs",
+                title: "Annonce",
+            },
         ],
     },
 ];
