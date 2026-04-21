@@ -7,7 +7,7 @@ function App() {
     return (
         <>
             <div className="banner-container">
-                <img src="banniere.png" alt="Bannière" />
+                <img src="banniere.jpg" alt="Bannière" />
             </div>
             <header>
                 <h2>Productions studieuses</h2>
