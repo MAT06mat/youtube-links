@@ -1,28 +1,21 @@
-import ItemList from "./components/ItemList";
-import { LinksList } from "./assets/LinksList";
-import ThemeButton from "./components/ThemeButton";
+import Home from "./routes/Home";
+import { BrowserRouter, Route, Routes } from "react-router";
+import NotFound from "./routes/NotFound";
+import Layout from "./routes/Layout";
+import Contact from "./routes/Contact";
 import "./styles/App.scss";
 
 function App() {
     return (
-        <>
-            <div className="banner-container">
-                <img src="banniere.jpg" alt="Bannière" />
-            </div>
-            <header>
-                <h2>Productions studieuses</h2>
-                <ThemeButton />
-            </header>
-            <section>
-                <ItemList list={LinksList} />
-            </section>
-            <footer>
-                Site par{" "}
-                <a href="https://github.com/mat06mat" target="_blank">
-                    MAT06mat
-                </a>
-            </footer>
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="contact" element={<Contact />} />
+                    <Route path="*" element={<NotFound />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     );
 }
 

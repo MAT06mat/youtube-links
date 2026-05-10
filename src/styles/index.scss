@@ -27,6 +27,7 @@ body {
         oklch(65% 0.25 260),
         oklch(55% 0.2 300)
     );
+    --announce-gradient: linear-gradient(135deg, #ff4d4d, #f9a528);
 
     /* Light Theme */
     --base-color: #ffffff;
@@ -52,6 +53,7 @@ body {
         --shadow-sm: 0 1px 3px 0 rgba(92, 92, 92, 0.1);
         --shadow-md: 0 4px 6px -1px rgba(92, 92, 92, 0.15);
         --shadow-lg: 0 6px 15px -3px rgba(92, 92, 92, 0.2);
+        --announce-gradient: linear-gradient(135deg, #ff5f5f, #ffa94d);
     }
 }
 
