@@ -3,12 +3,12 @@ import "../styles/Contact.scss";
 function Contact() {
     const announcementHTML = (
         <>
-            <h3>Flash info</h3>
+            <h3>IMPORTANT</h3>
             <img
                 src="https://t4.ftcdn.net/jpg/07/06/13/07/240_F_706130754_j2EzHYPxplkK3wAzLkuo5kJgTOLaRyJU.jpg"
                 alt="Chat"
             />
-            <p>Askip JUL va me faire un procès</p>
+            <p>raccccaccacarcarcaca</p>
         </>
     );
 
