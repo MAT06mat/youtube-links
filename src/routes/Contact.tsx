@@ -3,12 +3,13 @@ import "../styles/Contact.scss";
 function Contact() {
     const announcementHTML = (
         <>
-            <h3>IMPORTANT</h3>
+            <h3>PROCHAINEMENT</h3>
+            <h4>L'OMNI est de retour!</h4>
             <img
-                src="https://t4.ftcdn.net/jpg/07/06/13/07/240_F_706130754_j2EzHYPxplkK3wAzLkuo5kJgTOLaRyJU.jpg"
-                alt="Chat"
+                src="https://i.postimg.cc/L6b7MtFV/OMNI.png"
+                alt="L'OMNI vous salue"
             />
-            <p>raccccaccacarcarcaca</p>
+            <p>Chanson originale + clip prévu d'ici la fin de la semaine</p>
         </>
     );
 
