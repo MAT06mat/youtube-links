@@ -34,7 +34,7 @@ function Contact() {
                 <h3>Me contacter</h3>
                 <div className="contact-links">
                     <a
-                        href="mailto:votre-email@exemple.com"
+                        href="mailto:contactstudieux@gmail.com"
                         className="contact-item"
                     >
                         Mail : contactstudieux@gmail.com

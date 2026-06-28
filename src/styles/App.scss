@@ -74,6 +74,8 @@ footer {
     border-top: 1px solid var(--line-color);
     color: var(--secondary-text-color);
     font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
 }
 
 .folder {
@@ -254,6 +256,13 @@ footer {
     background: rgba(from var(--brand-color) r g b / 0.05);
 }
 
+.annonce-link {
+    max-width: 400px;
+    margin: 1rem auto;
+    font-size: 0.95rem;
+    color: var(--secondary-text-color);
+}
+
 /* --- RESPONSIVE --- */
 @media screen and (max-width: 600px) {
     section {
@@ -310,5 +319,9 @@ footer {
 
     .folder.open > .list-wrapper .item-list {
         padding-bottom: 0.2rem;
+    }
+
+    footer {
+        padding: 0.8rem 1rem;
     }
 }

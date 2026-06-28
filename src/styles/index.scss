@@ -58,9 +58,12 @@ body {
 }
 
 a {
+    text-decoration: inherit;
+}
+
+a:not(.title) {
     font-weight: 500;
     color: var(--brand-color);
-    text-decoration: inherit;
     transition: color 0.2s ease;
 }
 

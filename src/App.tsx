@@ -12,6 +12,7 @@ function App() {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route path="contact" element={<Contact />} />
+                    <Route path="annonces" element={<Contact />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
