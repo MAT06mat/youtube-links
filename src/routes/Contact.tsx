@@ -13,7 +13,7 @@ function Contact() {
         </>
     );
 
-    const hasAnnouncement = true;
+    const hasAnnouncement = false;
 
     return (
         <div className="contact-container">
